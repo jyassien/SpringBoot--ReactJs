@@ -1,5 +1,7 @@
 package com.fullStack.springReact.service;
 
+import java.util.List;
+
 import com.fullStack.springReact.model.Student;
 import com.fullStack.springReact.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +21,9 @@ public class StudentServiceImpl implements StudentService{
    @Override
     public Student saveStudent(Student student ){
        return studentRepository.save(student );
+   }
+   @Override
+    public List<Student> getAllStudents(){
+        return studentRepository.findAll();
    }
 }

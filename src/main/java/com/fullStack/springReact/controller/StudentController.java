@@ -3,6 +3,7 @@ package com.fullStack.springReact.controller;
 import com.fullStack.springReact.model.Student;
 import com.fullStack.springReact.service.StudentService;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +27,11 @@ public class StudentController {
     {
         studentService.saveStudent(student);
         return "New Student is added";
+    }
+
+    @GetMapping("/getAll")
+    public List<Student> getAllStudents(){
+        return studentService.getAllStudents();
     }
 
 }
